@@ -1,7 +1,7 @@
 package com.practice.bean;
 
 /**
- * Created by SXY on 2016/1/26.
+ * Created by ygh on 2016/1/26.
  */
 public class Userbean {
     private String userid;

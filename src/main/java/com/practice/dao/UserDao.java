@@ -1,6 +1,8 @@
 package com.practice.dao;
 
 import com.practice.bean.*;
+import com.practice.bean.accountbean.aUserbean;
+import com.practice.bean.accountbean.accountBean;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -49,4 +51,18 @@ public interface UserDao {
 
     @Update("update yuyuejilu set paystatus=#{paystatus} where orderid=#{orderid}")
     int updatePay(@Param("paystatus") String paystatus,@Param("orderid") String orderid);
+
+    //******************************分割线********************************
+
+    @Insert("insert into account_userinfo (cellphone,name,pwd) values(#{cellphone}, #{name},#{pwd})")
+    int resign_account(@Param("cellphone") String cellphone,@Param("name") String name,@Param("pwd") String pwd);
+
+    @Select("select * from account_userinfo where cellphone=#{cellphone} and pwd=#{pwd} limit 1")
+    aUserbean getLogin_account(@Param("cellphone") String cellphone, @Param("pwd") String pwd);
+
+    @Insert("insert into account_detail (cellphone,title,year,monthday,time,description,img_id) values(#{cellphone}, #{title},#{year},#{monthday},#{time},#{description},#{img_id})")
+    int set_account(@Param("cellphone") String cellphone,@Param("title") String title,@Param("year") int year,@Param("monthday") int monthday,@Param("time") String time,@Param("description") String description,@Param("img_id") String img_id);
+
+    @Select("select * from account_detail where cellphone=#{cellphone}")
+    List<accountBean> get_account(@Param("cellphone") String cellphone);
 }

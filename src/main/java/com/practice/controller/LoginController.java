@@ -60,7 +60,7 @@ public class LoginController {
         if(flag>0){
             f1.setStatus("success");
         }else {
-            f1.setStatus("falied");
+            f1.setStatus("failed");
         }
         return f1;
     }
@@ -153,7 +153,7 @@ public class LoginController {
         if(flag>0){
             f1.setStatus("success");
         }else {
-            f1.setStatus("falied");
+            f1.setStatus("failed");
         }
         return f1;
     }
@@ -180,7 +180,7 @@ public class LoginController {
         if(flag>0){
             f1.setStatus("success");
         }else {
-            f1.setStatus("falied");
+            f1.setStatus("failed");
         }
         return f1;
     }
